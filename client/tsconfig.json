@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "dist/js",
+    "module": "CommonJS",
     "target": "es2022",
-    "noEmitOnError": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "strictNullChecks": true,
-    "experimentalDecorators": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": true
   },
   "include": ["src/**/*"]
