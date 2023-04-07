@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/js",
+    "target": "es2022",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"]
+}
