@@ -3,6 +3,8 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
+import { createDocument } from './docCreator/index.js';
+
 dotenv.config();
 
 const app = express();
@@ -19,7 +21,7 @@ app.get('/time', (_, res: Response) => {
 app.post('/create', (req: Request, res: Response) => {
   const data = req.body;
 
-  res.send(`Data received: ${JSON.stringify(data)}`);
+  createDocument(data);
 });
 
 app.listen(port, () => {
