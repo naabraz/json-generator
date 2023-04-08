@@ -8,7 +8,17 @@
   <body>
     <h1>JSON Generator</h1>
     <script type="module" src="js/app.js"></script>
-    <button class="button">Click me</button>
-    <button class="api-button">Call API</button>
+    <form class="form">
+      <label for="file-name">Name</label>
+      <input type="text" id="work-name" required autofocus />
+
+      <label for="year">Year</label>
+      <input type="text" id="work-year" required autofocus />
+
+      <label for="work">Work</label>
+      <input type="text" id="work-type" required autofocus />
+
+      <button type="submit">Create</button>
+    </form>
   </body>
 </html>

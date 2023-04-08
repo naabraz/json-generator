@@ -1,12 +1,13 @@
-const requestGenerator = () => console.log('testing');
-
-const restCall = async (path: string) => {
+const restPost = async (path: string, body: object) => {
   const url = `http://localhost:8000/${path}`;
 
   const response = await fetch(url, {
+    method: 'POST',
     headers: {
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
     },
+    body: JSON.stringify(body),
   });
 
   const data = await response.json();
@@ -14,14 +15,18 @@ const restCall = async (path: string) => {
   return data;
 };
 
-const getAPITime = async () => {
+interface DocValues {
+  name: string;
+  year: string;
+  type: string;
+}
+
+const requestDocCreation = (values: DocValues) => {
   try {
-    const data = await restCall('time');
-    console.log('data', data);
-    return data;
+    restPost('create', values);
   } catch (error) {
-    console.error('getAPITime:', error);
+    console.error('requestDocCreation:', error);
   }
 };
 
-export { requestGenerator, getAPITime };
+export { requestDocCreation };

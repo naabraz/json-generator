@@ -22,6 +22,8 @@ app.post('/create', (req: Request, res: Response) => {
   const data = req.body;
 
   createDocument(data);
+
+  res.end();
 });
 
 app.listen(port, () => {
